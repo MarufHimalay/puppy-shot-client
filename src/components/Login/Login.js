@@ -10,7 +10,7 @@ const Login = () => {
     const [user, setUser] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
-    const { from } = location.state || { from: { pathname: `/checkout` } };
+    const { from } = location.state || { from: { pathname: `/home` } };
     if (firebase.apps.length === 0) {
       firebase.initializeApp(firebaseConfig);
     }
@@ -36,9 +36,10 @@ const Login = () => {
     };
     return (
         <div  className="container text-center">
-            <button style={{marginTop:"10%"}} className="btn btn-primary" onClick={handleGoogleSignIn}>Sign in using Google</button>
-            <h2>{user.name}</h2>
-            <p>{user.email}</p>
+            {!user.name && <button style={{marginTop:"10%"}} className="btn btn-primary" onClick={handleGoogleSignIn}>Sign in using Google</button>}
+            <h2>Welcome!!</h2>
+            <h3>{user.name}</h3>
+            <p> Your email: {user.email}</p>
             <img src={user.image} alt=""/>
         </div>
     );

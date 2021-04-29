@@ -11,13 +11,13 @@ const Order = () => {
         fetch(`https://apple-custard-69973.herokuapp.com/person/${email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, [email])
+    }, [email, orders])
     
     
     return (
         <div>
             <h2 className="text-center pt-2">Your Orders</h2>
-            <div style={{margin:'10% auto'}} className="container text-center row cols row-cols-md-3 cols-sm-1 gy-2">
+            <div style={{margin:'5% auto'}} className="container text-center row cols row-cols-md-3 cols-sm-1 gy-2">
             
             {
                 orders.map(pd =>
@@ -27,7 +27,7 @@ const Order = () => {
                             <Card.Body>
                                 <img style={{width: '100%'}} src={pd.imageURL} alt=""/>
                                 <Card.Title>{pd.price}</Card.Title>
-                               <p>{pd.date}</p>
+                               <span style={{fontSize:"1.2em", fontWeight:"600"}}>Date: </span>{pd.date}
                             </Card.Body>
                         </Card>
                         <br />

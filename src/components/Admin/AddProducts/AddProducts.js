@@ -44,31 +44,40 @@ const AddProducts = () => {
     })
       .then(res => {
         console.log('server side response', res)
-        
+
       })
-      
-     location.reload(true)
   };
+  const inputStyle = { padding: '5px', border: '1px solid gray', borderRadius: '3px', width: '100%' }
 
   return (
     <div className="container pt-2">
       <h1>Add your Products Here</h1>
-      <hr/>
-        <form onSubmit={handleSubmit(onSubmit)}>
-        <h4>Pet name</h4>
-        <input name="name" defaultValue="Puppy" ref={register} />
-        <br/>
-        <h4>Weight</h4>
-        <input name="weight" defaultValue="200gm" ref={register}/>
-        <br/>
-        <h4>Price</h4>
-        <input name="price" defaultValue="$250" ref={register}/>
-        <br/>
-        <h4>upload image</h4>
-        <input name="exampleRequired" type="file" onChange={handleImageUpload} />
-        <br/>
-        <h3>submit to continue</h3>
-        <input className="btn btn-danger" type="submit" />
+      <hr />
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="row py-2">
+          <div className="col-md-6">
+            <h5>Pet name</h5>
+            <input style={inputStyle} name="name" defaultValue="Puppy" ref={register} />
+            <br />
+            <h5>Weight</h5>
+            <input style={inputStyle}  name="weight" defaultValue="200gm" ref={register} />
+            <br />
+          </div>
+          <div className="col-md-6 mb-3">
+            <h5>Price</h5>
+            <input style={inputStyle}  name="price" defaultValue="$250" ref={register} />
+            <br />
+            <h5>upload image</h5>
+            <input style={{textColor:"lightGreen"}} name="exampleRequired" type="file" onChange={handleImageUpload} />
+           
+            <br />
+          </div>
+        <hr/>
+         
+        </div>
+        <div className="text-end">
+          <input className="btn btn-success" type="submit" />
+          </div>
       </form>
     </div>
   );
