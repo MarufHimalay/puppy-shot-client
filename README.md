@@ -1,5 +1,5 @@
 
-![dog-838281_1920](https://user-images.githubusercontent.com/69745321/116654778-ac4a8a00-a9ab-11eb-9de1-5a58307ee3bb.jpg)
+![image](https://user-images.githubusercontent.com/69745321/116706534-8cd55080-a9ef-11eb-8f3d-a3c3f5fb40ac.png)
 # Puppy Shot
 Single page web application made with ReactJS where customers can add product to the cart, after checkout they will be redirected to the order page.
 Admins can add products to the homepage, can manage products.
